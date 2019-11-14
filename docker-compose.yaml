@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+
+    mongo:
+        image:          mongo:3.7.3
+        container_name: mongo
+        restart:        always
+        ports:          27017:27017
+        volumes:
+                        - /nodeclub/data/mongo:/data/db
+        networks:
+                        - net-nodeclub-server
+
+    redis:
+        image:          redis:4.0.10-alpine
+        container_name: redis
+        restart:        always
+        ports:          6379:6379
+        volumes:
+                        - /nodeclub/data/redis:/data
+        networks:
+                        - net-nodeclub-server
+
+    node:
+        image:          node:10.10.0-alpine
+        container_name: node
+        restart:        always
+        ports:
+                        - 3000:3000
+        volumes:
+                        - /nodeclub/service/:/nodeclub/
+                        - /nodeclub/conf/nodeclub-config.js:/nodeclub/config.js
+                        - /nodeclub/data/file:/nodeclub/public/upload
+                        - /nodeclub/log/nodeclub:/nodeclub/log
+        networks:
+                        - net-nodeclub-server
+        command: node /nodeclub/app.js
+
+networks:
+    net-nodeclub-server:
