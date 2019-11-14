@@ -2,7 +2,7 @@
 
 #### 安装 nodeclub ####
 git clone https://github.com/cnodejs/nodeclub.git nodeclub/service
-rm -rf nodeclub/.git nodeclub/service/.git
+rm -rf /nodeclub/.git /nodeclub/service/.git
 
-cd nodeclub/service
+cd /nodeclub/service
 make install
