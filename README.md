@@ -27,19 +27,18 @@
 ### 初始化
 
 ```sh
-cd /
-
 # 拉取项目
 git clone https://github.com/liz-x/docker-nodeclub.git nodeclub
 
+cd nodeclub
+
 # 安装 Docker（如未安装）
-sudo sh nodeclub/docker-install.sh.sh
+sudo sh docker-install.sh.sh
 
 # 拉取 NodeClub
-sudo sh nodeclub/nodeclub-init.sh
+sudo sh nodeclub-init.sh
 
 # 启动
-cd /nodeclub/
 docker-compose up -d
 
 # 查看容器状态

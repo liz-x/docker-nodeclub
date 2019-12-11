@@ -9,7 +9,7 @@ services:
         ports:          
                         - 27017:27017
         volumes:
-                        - /nodeclub/data/mongo:/data/db
+                        - ./data/mongo:/data/db
         networks:
                         - net-nodeclub-server
 
@@ -20,24 +20,23 @@ services:
         ports:          
                         - 6379:6379
         volumes:
-                        - /nodeclub/data/redis:/data
+                        - ./data/redis:/data
         networks:
                         - net-nodeclub-server
 
-    node:
-        image:          node:10.10.0-alpine
-        container_name: node
-        restart:        always
+    nodeclub:
+        image:          nodeclub
+        container_name: nodeclub
         ports:
                         - 3000:3000
         volumes:
-                        - /nodeclub/service/:/nodeclub/
-                        - /nodeclub/conf/nodeclub-config.js:/nodeclub/config.js
-                        - /nodeclub/data/file:/nodeclub/public/upload
-                        - /nodeclub/log/nodeclub:/nodeclub/log
+                        - ./conf/nodeclub-config.js:/nodeclub/config.js
+                        - ./data/file:/nodeclub/public/upload
+                        - ./log/nodeclub:/nodeclub/log
+                        # - ./views/layout.html:/nodeclub/views/layout.html
+                        # - ./views/sidebar.html:/nodeclub/views/sidebar.html
         networks:
                         - net-nodeclub-server
-        command: node /nodeclub/app.js
 
 networks:
     net-nodeclub-server:

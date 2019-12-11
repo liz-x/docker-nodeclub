@@ -1,8 +1,12 @@
 #!/bin/bash
 
-#### 安装 nodeclub ####
-git clone https://github.com/cnodejs/nodeclub.git nodeclub/service
-rm -rf /nodeclub/.git /nodeclub/service/.git
+#### 克隆 ####
+git clone https://github.com/cnodejs/nodeclub.git app
+rm -rf app/.git
 
-cd /nodeclub/service
-make install
+#### 镜像 ####
+docker rmi nodeclub
+docker build -t nodeclub .
+
+#### 删除 ####
+rm -rf app
