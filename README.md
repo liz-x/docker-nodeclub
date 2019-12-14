@@ -7,7 +7,7 @@
 **docker-install.sh**
 
 - 安装 Docker
-- 安装 Docker-Compos
+- 安装 Docker-Compose
 
 **nodeclub-install.sh**
 
