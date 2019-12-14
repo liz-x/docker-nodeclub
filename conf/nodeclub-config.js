@@ -109,10 +109,10 @@ var config = {
     accessKey: 'your access key',
     secretKey: 'your secret key',
     bucket: 'your bucket name',
-    origin: 'your qiniu domain',
+    origin: 'http://your qiniu domain',
     // 如果vps在国外，请使用 http://up.qiniug.com/ ，这是七牛的国际节点
     // 如果在国内，此项请留空
-    uploadURL: '',
+    uploadURL: 'http://xxxxxxxx',
   },
 
   // 文件上传配置
@@ -127,6 +127,7 @@ var config = {
   // 版块
   tabs: [
     ['share', '分享'],
+    ['ask', '灌水'],
     ['ask', '问答'],
   ],
 
