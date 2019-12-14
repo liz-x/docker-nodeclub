@@ -29,12 +29,20 @@ services:
         container_name: nodeclub
         ports:
                         - 3000:3000
+        depends_on: 
+                        - mongo
+                        - redis
         volumes:
                         - ./conf/nodeclub-config.js:/nodeclub/config.js
                         - ./data/file:/nodeclub/public/upload
                         - ./log/nodeclub:/nodeclub/log
-                        # - ./views/layout.html:/nodeclub/views/layout.html
-                        # - ./views/sidebar.html:/nodeclub/views/sidebar.html
+                        - ./re-nodeclub:/tmp/re-nodeclub
+        command:        
+                        - sh
+                        - -c
+                        - |
+                            cp -rf /tmp/re-nodeclub/* /nodeclub/
+                            node app.js
         networks:
                         - net-nodeclub-server
 
