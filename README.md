@@ -11,15 +11,17 @@
 
 **nodeclub-install.sh**
 
-- 安装 NodeClub
+- 生成 NodeClub 镜像
 
 **目录**
 
 ```sh
-/nodeclub/conf      # 配置
-/nodeclub/data      # 数据
-/nodeclub/script    # 脚本
-/nodeclub/log       # 日志
+conf                # 配置
+re-nodeclub         # 重写
+data                # 数据
+file                # 文件
+log                 # 日志
+script              # 脚本
 ```
 
 ## 搭建
@@ -35,7 +37,7 @@ cd nodeclub
 # 安装 Docker（如未安装）
 sudo sh docker-install.sh.sh
 
-# 拉取 NodeClub
+# 生成 NodeClub 镜像
 sudo sh nodeclub-init.sh
 
 # 启动
@@ -45,7 +47,9 @@ docker-compose up -d
 docker-compose ps
 ```
 
-## Mongo 设置
+## 修改
+
+## Mongo 设置 （可选）
 
 ```sh
 # 创建 admin 账号和数据库
