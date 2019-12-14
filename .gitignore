@@ -1,1 +1,7 @@
 *-bak.*
+
+.DS_Store
+
+/data/mongo/*
+/data/redis/*
+/data/file/*
