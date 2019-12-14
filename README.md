@@ -17,7 +17,7 @@
 
 ```sh
 conf                # 配置
-re-nodeclub         # 重写
+re-nodeclub         # 重写（个性化目录）
 data                # 数据
 file                # 文件
 log                 # 日志
@@ -46,8 +46,6 @@ docker-compose up -d
 # 查看容器状态
 docker-compose ps
 ```
-
-## 修改
 
 ## Mongo 设置 （可选）
 
