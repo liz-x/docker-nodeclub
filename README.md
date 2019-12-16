@@ -4,14 +4,9 @@
 
 ## 说明
 
-**docker-install.sh**
-
 - 安装 Docker
-- 安装 Docker-Compose
-
-**nodeclub-install.sh**
-
 - 生成 NodeClub 镜像
+- 远程镜像：registry.cn-hangzhou.aliyuncs.com/xt/nodeclub
 
 **目录**
 
@@ -31,14 +26,10 @@ script              # 脚本
 ```sh
 # 拉取项目
 git clone https://github.com/liz-x/docker-nodeclub.git nodeclub
-
 cd nodeclub
 
-# 安装 Docker（如未安装）
-sudo sh docker-install.sh.sh
-
 # 生成 NodeClub 镜像
-sudo sh nodeclub-init.sh
+docker build -t nodeclub .
 
 # 启动
 docker-compose up -d
