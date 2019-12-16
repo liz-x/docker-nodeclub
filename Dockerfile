@@ -1,12 +1,13 @@
 FROM node:8.16.2-jessie-slim
 
-ADD ./app /nodeclub
-WORKDIR /nodeclub
+RUN apt-get update && apt-get install -y apt-transport-https make git-core
 
-RUN apt-get update \
-    && apt-get install make
+RUN cd / \
+    && git clone https://github.com/cnodejs/nodeclub.git nodeclub \
+    && rm -rf nodeclub/.git
 
 RUN cd /nodeclub \
     && make install
 
+WORKDIR /nodeclub
 CMD ["node", "app.js"]
