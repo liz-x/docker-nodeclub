@@ -28,7 +28,7 @@ var config = {
   ],
 
   // 社区的域名
-  host: 'localhost',
+  host: 'yourdomain',
 
   // cdn host，如 http://cnodejs.qiniudn.com
   site_static_host: '', // 静态文件存储域名
